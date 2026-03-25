@@ -79,7 +79,6 @@ public class Main {
         }
 
         // 첫째 줄에 김지민과 임한수가 대결하는 라운드 번호를 출력한다.
-        // 만약 서로 대결하지 않을 때는 -1을 출력한다.
         System.out.println(round);
     }
 }
