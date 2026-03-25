@@ -41,7 +41,6 @@ public class Main {
             deque.addLast(i);
         }
 
-        // 조건1. 김지민과 임한수는 대결하기 전까지 항상 이김
         // 전체 참가자 대전 loop
         int round = 0;
         boolean isFight = false;
@@ -53,14 +52,14 @@ public class Main {
                 Integer p1 = deque.poll(); // player1
                 Integer p2 = deque.poll(); // player2
 
-                    // 김지민 임한수 만났을 경우 라운드 종료
+                // 김지민 임한수 만났을 경우 라운드 종료
                 if((p1 == kimjiminNo && p2 == imhansooNo)
                         || (p1 == imhansooNo && p2 == kimjiminNo)){
                     isFight = true;
                     break;
                 }
 
-                // p1, p2가 김지민이거나 임한수 일 경우 다음 라운드로 올림
+                // p1, p2가 김지민이거나 임한수 일 경우 다음 라운드로 올림(조건. 김지민과 임한수는 대결하기 전까지 항상 이김)
                 if(p1 == kimjiminNo ||  p1 == imhansooNo) tempDeque.addLast(p1);
                 if(p2 == kimjiminNo ||  p2 == imhansooNo) tempDeque.addLast(p2);
 
