@@ -23,8 +23,44 @@ package baekjoon.problem2839;
  * 2026-03-25  devhee     최초 생성
  * </pre>
  */
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sugarKg = sc.nextInt();
 
+        // Step1. 5kg로만 묶이는 case
+        if(sugarKg % 5 == 0){
+            System.out.println(sugarKg / 5);
+            System.exit(0);
+        }
+
+        // Step2. 5kg & 3kg 같이 묶여야 하는 경우
+        int a = sugarKg / 5;
+        int temp = Integer.MAX_VALUE;
+        if(a > 0) { // 5로 묶이는 경우에만 실행
+            for (int i = 1; i <= a; i++) {
+                int b = sugarKg - (5 * i); // 나눠지고 남는
+                int c = b % 3;
+                if(c == 0) {
+                    int basketNum = i + (b/3);
+                    if(temp > basketNum) temp = basketNum;
+                }
+            }
+        }
+
+        if(temp != Integer.MAX_VALUE ) {
+            System.out.println(temp);
+            System.exit(0);
+        }
+
+        // Step3. 3kg로만 묶이는 case
+        if(sugarKg % 3 == 0){
+            System.out.println(sugarKg / 3);
+            System.exit(0);
+        }
+
+        // 아무 것도 안걸림~
+        System.out.println(-1);
     }
 }
