@@ -1,4 +1,4 @@
-package backjoon.hard1;
+package baekjoon.problem10812;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ import java.util.Scanner;
  * 출력
  * 모든 순서를 회전시킨 다음에, 가장 왼쪽에 있는 바구니부터 바구니에 적혀있는 순서를 공백으로 구분해 출력한다.
  */
-public class BasketChange {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String [] firstLine = sc.nextLine().split(" ");
